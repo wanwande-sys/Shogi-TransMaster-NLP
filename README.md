@@ -1,6 +1,9 @@
 <img width="2467" height="1266" alt="image" src="https://github.com/user-attachments/assets/493f8e31-54c2-45b2-b56c-4dc2e22cbf02" />
-> ▲Shogi-TransMaster: 将棋動画の自動翻訳・字幕ハードコーディングツール
 
+## 📸 デモ画面 (Demo)
+<img width="2472" height="731" alt="image" src="https://github.com/user-attachments/assets/ffb6a585-3334-424f-802d-14717288038a" />
+
+> ▲ Streamlitを活用したMTPE（ポストエディット）用GUIインタフェース。人間（ドメインエキスパート）による最終確認と修正が容易に行えるHITL（Human-in-the-Loop）設計。
 
 🎥 実際のシステムによる翻訳・ハードコーディング成果物（Bilibili）:
 【【精校中字】山口惠梨子将棋讲座 01：形势判断基础】https://www.bilibili.com/video/BV1f2AtzvEHN?vd_source=8d4b25cf23468b18326df7305d9f7672
@@ -9,10 +12,7 @@
 これにより、AIの不確実性（幻覚や文脈エラー）を最終段階で排除し、実用レベルのプロフェッショナルな翻訳品質を担保しています。)
 
 
-## 📸 デモ画面 (Demo)
-<img width="2472" height="731" alt="image" src="https://github.com/user-attachments/assets/ffb6a585-3334-424f-802d-14717288038a" />
 
-> ▲ Streamlitを活用したMTPE（ポストエディット）用GUIインタフェース。人間（ドメインエキスパート）による最終確認と修正が容易に行えるHITL（Human-in-the-Loop）設計。
 
 
 ## 📌 プロジェクトの背景 (Motivation)

@@ -1,5 +1,5 @@
-<img width="2547" height="1277" alt="image" src="https://github.com/user-attachments/assets/ccdf8e8c-d791-4a27-bb4a-0582deba7ee2" /># Shogi-TransMaster: 将棋動画の自動翻訳・字幕ハードコーディングツール
-
+<img width="2547" height="1277" alt="image" src="https://github.com/user-attachments/assets/ccdf8e8c-d791-4a27-bb4a-0582deba7ee2"
+ /># Shogi-TransMaster: 将棋動画の自動翻訳・字幕ハードコーディングツール
 
 🎥 実際のシステムによる翻訳・ハードコーディング成果物（Bilibili）:
 【【精校中字】山口惠梨子将棋讲座 01：形势判断基础】https://www.bilibili.com/video/BV1f2AtzvEHN?vd_source=8d4b25cf23468b18326df7305d9f7672

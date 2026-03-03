@@ -460,7 +460,7 @@ with tab_pipeline:
 
     c_a, c_b, c_c, c_d = st.columns(4)
     with c_a:
-        pipe_out = st.selectbox("最终格式", ["仅中文字幕", "双语对照"])
+        pipe_out = st.selectbox("最终格式", ["仅中文字幕", "双语对照"], key="pipe_out")
     with c_b:
         pipe_eng = st.selectbox("翻译引擎", ["DeepSeek Pro", "Gemini 1.5 Flash"])
     with c_c:

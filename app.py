@@ -459,12 +459,12 @@ with tab_pipeline:
     pipe_txt, pipe_file = render_input_hub("tab3")
 
     c_a, c_b, c_c, c_d = st.columns(4)
-    with c_a:
-        pipe_out = st.selectbox("最终格式", ["仅中文字幕", "双语对照"], key="pipe_out")
+   with c_a:
+        pipe_out = st.selectbox("最终格式", ["仅中文字幕", "双语对照"], key="pipe_out_key")
     with c_b:
-        pipe_eng = st.selectbox("翻译引擎", ["DeepSeek Pro", "Gemini 1.5 Flash"])
+        pipe_eng = st.selectbox("翻译引擎", ["DeepSeek Pro", "Gemini 1.5 Flash"], key="pipe_eng_key")
     with c_c:
-        pipe_preset = st.selectbox("字幕排版", list(SUBTITLE_PRESETS.keys()))
+        pipe_preset = st.selectbox("字幕排版", list(SUBTITLE_PRESETS.keys()), key="pipe_preset_key")
     with c_d:
         pipe_font_size = st.number_input("基准字号", min_value=12, max_value=40, value=22)
 

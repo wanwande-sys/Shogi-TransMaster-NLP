@@ -462,12 +462,12 @@ with tab_pipeline:
    with c_a:
         pipe_out = st.selectbox("最终格式", ["仅中文字幕", "双语对照"], key="pipe_out_key")
     with c_b:
-        pipe_eng = st.selectbox("翻译引擎", ["DeepSeek Pro", "Gemini 1.5 Flash"], key="pipe_eng_key")
-    with c_c:
+       
+    pipe_eng = st.selectbox("翻译引擎", ["DeepSeek Pro", "Gemini 1.5 Flash"], key="pipe_eng_key")
+   with c_c:
         pipe_preset = st.selectbox("字幕排版", list(SUBTITLE_PRESETS.keys()), key="pipe_preset_key")
     with c_d:
-        pipe_font_size = st.number_input("基准字号", min_value=12, max_value=40, value=22)
-
+        pipe_font_size = st.number_input("基准字号", min_value=12, max_value=40, value=22, key="pipe_font_key")
     if st.button("启动批量自动化流水线", type="primary", use_container_width=True):
         urls = extract_urls(pipe_txt, pipe_file)
         if urls:

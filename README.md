@@ -1,9 +1,14 @@
 <img width="2547" height="1277" alt="image" src="https://github.com/user-attachments/assets/ccdf8e8c-d791-4a27-bb4a-0582deba7ee2" /># Shogi-TransMaster: 将棋動画の自動翻訳・字幕ハードコーディングツール
 
+🎥 実際のシステムによる翻訳・ハードコーディング成果物（Bilibili）:
+【【精校中字】山口惠梨子将棋讲座 01：形势判断基础】https://www.bilibili.com/video/BV1f2AtzvEHN?vd_source=8d4b25cf23468b18326df7305d9f7672
+(Human-in-the-Loop (HITL) による機械翻訳ポストエディット (MTPE)
+完全な自動化（ASR + LLM）を経た後、最終的な字幕のハードコーディング（焼き込み）を行う前に、GUI（Streamlit）上で人間がレビューおよび微修正（Post-editing）を行えるワークフローを設計しました。
+これにより、AIの不確実性（幻覚や文脈エラー）を最終段階で排除し、実用レベルのプロフェッショナルな翻訳品質を担保しています。)
+
 ## 📌 プロジェクトの背景 (Motivation)
 将棋の解説動画（YouTubeなど）を翻訳・視聴する際、汎用的な音声認識（Whisper）や翻訳モデルでは、将棋特有の専門用語が正しく処理されないという問題に直面しました。
 例えば、「1四歩」という座標が単なる「14歩」になったり、「成銀」や「打つ」といった表現が文脈を無視して直訳されたりします。
-
 この課題を解決するため、特定ドメイン（将棋）の翻訳精度を向上させる個人的なツールとして、本システムを開発しました。
 
 ## 💡 解決へのアプローチ (Approach)
@@ -34,3 +39,6 @@ pip install -r requirements.txt
 # 起動
 streamlit run app.py
 <img width="2547" height="1277" alt="image" src="https://github.com/user-attachments/assets/f89172f0-969a-418c-9f9b-e758328de383" />
+## 📸 デモ画面 (Demo)
+<img width="2472" height="731" alt="image" src="https://github.com/user-attachments/assets/5d119d12-864f-49e7-9284-60c4601e376d" />
+> ▲ Streamlitを活用したMTPE（ポストエディット）用GUIインタフェース。人間（ドメインエキスパート）による最終確認と修正が容易に行えるHITL（Human-in-the-Loop）設計。

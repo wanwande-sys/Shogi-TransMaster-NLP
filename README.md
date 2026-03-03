@@ -1,4 +1,4 @@
-# Shogi-TransMaster: 将棋動画の自動翻訳・字幕ハードコーディングツール
+<img width="2547" height="1277" alt="image" src="https://github.com/user-attachments/assets/ccdf8e8c-d791-4a27-bb4a-0582deba7ee2" /># Shogi-TransMaster: 将棋動画の自動翻訳・字幕ハードコーディングツール
 
 ## 📌 プロジェクトの背景 (Motivation)
 将棋の解説動画（YouTubeなど）を翻訳・視聴する際、汎用的な音声認識（Whisper）や翻訳モデルでは、将棋特有の専門用語が正しく処理されないという問題に直面しました。
@@ -33,3 +33,4 @@ pip install -r requirements.txt
 
 # 起動
 streamlit run app.py
+<img width="2547" height="1277" alt="image" src="https://github.com/user-attachments/assets/f89172f0-969a-418c-9f9b-e758328de383" />

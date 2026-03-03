@@ -59,6 +59,7 @@ SUBTITLE_PRESETS = {
                                             "vertical": True, "margin_lr": 40}
 }
 
+
 @st.cache_resource
 def init_translation_clients():
     sf_client = OpenAI(api_key=os.getenv("SF_API_KEY"), base_url="https://api.siliconflow.cn/v1",
@@ -66,15 +67,19 @@ def init_translation_clients():
     gemini_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
     return sf_client, gemini_client
 
+
 @st.cache_resource
 def init_whisper_model():
     from faster_whisper import WhisperModel
     return WhisperModel("large-v3", device="cuda", compute_type="float16")
 
+
 sf_client, gemini_client = init_translation_clients()
+
 
 def format_time(seconds):
     return f"{int(seconds // 3600):02d}:{int((seconds % 3600) // 60):02d}:{seconds % 60:06.3f}"
+
 
 def extract_urls(text_input, uploaded_file):
     urls = [line.strip() for line in text_input.split('\n') if line.strip()]
@@ -82,6 +87,7 @@ def extract_urls(text_input, uploaded_file):
         file_content = uploaded_file.getvalue().decode("utf-8")
         urls.extend([line.strip() for line in file_content.split('\n') if line.strip()])
     return list(dict.fromkeys(urls))
+
 
 def download_video(urls, mode, quality, progress_ui, status_ui):
     outtmpl = os.path.join(BASE_DOWNLOAD_DIR, '%(uploader)s', '%(title)s', '%(title)s.%(ext)s')
@@ -159,6 +165,7 @@ def download_video(urls, mode, quality, progress_ui, status_ui):
         st.error(f"下载异常: {e}")
         return []
 
+
 def enforce_line_breaks(vtt_str, is_vertical):
     if not is_vertical:
         return vtt_str
@@ -172,6 +179,7 @@ def enforce_line_breaks(vtt_str, is_vertical):
             wrapped = '\n'.join([line[i:i + limit] for i in range(0, len(line), limit)])
             new_lines.append(wrapped)
     return '\n'.join(new_lines)
+
 
 def burn_subtitles_nvenc(video_path, vtt_content, mode, preset_key, base_font_size):
     cfg = SUBTITLE_PRESETS[preset_key]
@@ -209,6 +217,7 @@ def burn_subtitles_nvenc(video_path, vtt_content, mode, preset_key, base_font_si
             if os.path.exists(tmp_vtt_path):
                 os.remove(tmp_vtt_path)
 
+
 def translate_batch(engine, ja_lines, full_glossary, prev_context, sys_prompt):
     active_glossary = {k: v for k, v in full_glossary.items() if k in "".join(ja_lines)}
     glossary_str = json.dumps(active_glossary, ensure_ascii=False) if active_glossary else "无"
@@ -241,6 +250,7 @@ def translate_batch(engine, ja_lines, full_glossary, prev_context, sys_prompt):
             time.sleep(2)
     return ["【翻译超时或错误】"] * len(ja_lines)
 
+
 def run_full_pipeline(video_path, engine, out_type, is_test, active_prof, full_gloss, preset, font_size):
     prog, stat = st.progress(0.0), st.empty()
     ja_captions = []
@@ -251,8 +261,7 @@ def run_full_pipeline(video_path, engine, out_type, is_test, active_prof, full_g
                                    condition_on_previous_text=True)
     for s in segments:
         if s.text.strip():
-            ja_captions.append(
-                {'start': format_time(s.start), 'end': format_time(s.end), 'text': s.text.strip()})
+            ja_captions.append({'start': format_time(s.start), 'end': format_time(s.end), 'text': s.text.strip()})
 
     if is_test:
         ja_captions = ja_captions[:20]
@@ -290,6 +299,7 @@ def run_full_pipeline(video_path, engine, out_type, is_test, active_prof, full_g
 
     st.success(f"处理完成: {os.path.basename(out_vid)}")
 
+
 with st.sidebar:
     st.header("配置")
     selected_domain = st.selectbox("视频类型", list(DOMAIN_PROFILES.keys()), index=0)
@@ -321,8 +331,8 @@ with st.sidebar:
 
 st.title("视频处理工作台")
 
-tab_download, tab_translate, tab_pipeline = st.tabs(
-    ["1. 独立下载终端", "2. 独立翻译压制", "3. 端到端流水线 (全自动)"])
+tab_download, tab_translate, tab_pipeline = st.tabs(["1. 独立下载终端", "2. 独立翻译压制", "3. 端到端流水线 (全自动)"])
+
 
 def render_input_hub(key_prefix):
     st.markdown("##### 数据源输入 (支持单链接 / 多行批量 / 专栏 / 播放列表)")
@@ -333,9 +343,9 @@ def render_input_hub(key_prefix):
         file_input = st.file_uploader("将包含链接的 .txt 文件拖拽到此处：", type=['txt'], key=f"{key_prefix}_file")
     return txt_input, file_input
 
+
 with tab_download:
     dl_txt, dl_file = render_input_hub("tab1")
-
     c1, c2 = st.columns(2)
     with c1:
         dl_mode = st.selectbox("下载配置", ["视频 + 日文字幕 (标准工作流)", "纯音频提取 (MP3 最高音质)"])
@@ -424,7 +434,6 @@ with tab_translate:
                 if tmp_vtt_to_delete and os.path.exists(tmp_vtt_to_delete):
                     os.remove(tmp_vtt_to_delete)
 
-    if tr_mode == "自由挂载/重压制 (读取外部字幕)":
         if st.button("确认烧录：执行硬件压制", type="primary", use_container_width=True):
             if local_path and os.path.exists(local_path) and edited_df is not None:
                 new_vtt_content = "WEBVTT\n\n"
@@ -459,15 +468,16 @@ with tab_pipeline:
     pipe_txt, pipe_file = render_input_hub("tab3")
 
     c_a, c_b, c_c, c_d = st.columns(4)
-   with c_a:
+
+    with c_a:
         pipe_out = st.selectbox("最终格式", ["仅中文字幕", "双语对照"], key="pipe_out_key")
     with c_b:
-       
-    pipe_eng = st.selectbox("翻译引擎", ["DeepSeek Pro", "Gemini 1.5 Flash"], key="pipe_eng_key")
-   with c_c:
+        pipe_eng = st.selectbox("翻译引擎", ["DeepSeek Pro", "Gemini 1.5 Flash"], key="pipe_eng_key")
+    with c_c:
         pipe_preset = st.selectbox("字幕排版", list(SUBTITLE_PRESETS.keys()), key="pipe_preset_key")
     with c_d:
         pipe_font_size = st.number_input("基准字号", min_value=12, max_value=40, value=22, key="pipe_font_key")
+
     if st.button("启动批量自动化流水线", type="primary", use_container_width=True):
         urls = extract_urls(pipe_txt, pipe_file)
         if urls:

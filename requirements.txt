@@ -1,0 +1,9 @@
+streamlit
+faster-whisper
+openai
+google-generativeai
+python-dotenv
+yt-dlp
+pandas
+webvtt-py
+httpx

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+venv/
+*.mp4
+*.vtt
+*.log
+.DS_Store

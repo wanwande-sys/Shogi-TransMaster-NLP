@@ -1,5 +1,5 @@
 # Shogi-TransMaster-NLP
-# Shogi-TransMaster-NLP
+
 
 **AI 驱动的将棋视频自动翻译与字幕压制工具**
 

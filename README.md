@@ -5,6 +5,8 @@
 
 > ▲ Streamlitを活用したMTPE（ポストエディット）用GUIインタフェース。人間（ドメインエキスパート）による最終確認と修正が容易に行えるHITL（Human-in-the-Loop）設計。
 
+
+
 🎥 実際のシステムによる翻訳・ハードコーディング成果物（Bilibili）:
 【【精校中字】山口惠梨子将棋讲座 01：形势判断基础】https://www.bilibili.com/video/BV1f2AtzvEHN?vd_source=8d4b25cf23468b18326df7305d9f7672
 (Human-in-the-Loop (HITL) による機械翻訳ポストエディット (MTPE)

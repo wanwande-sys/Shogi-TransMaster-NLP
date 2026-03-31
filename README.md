@@ -9,7 +9,7 @@
 
 ## 📸 系统交互界面 (HITL GUI)
 
-![Uploading 557317321-493f8e31-54c2-45b2-b56c-4dc2e22cbf02.png…]()
+<img width="2467" height="1266" alt="Image" src="https://github.com/user-attachments/assets/de983344-ecdd-4cfd-ae13-9e234350c405" />
 
 
 

@@ -9,7 +9,8 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # --- 1. 全局与环境设置 ---
 os.environ["HTTP_PROXY"] = "http://127.0.0.1:7890"
 os.environ["HTTPS_PROXY"] = "http://127.0.0.1:7890"
-BASE_DOWNLOAD_DIR = r"D:\YouTube下载器\已下载视频"
+BASE_DOWNLOAD_DIR = os.path.join(ROOT_DIR, "downloads")
+os.makedirs(BASE_DOWNLOAD_DIR, exist_ok=True) # 自动创建文件夹防报错
 
 # 智能拼接 data 文件夹下的字典路径
 GLOSSARY_FILE = os.path.join(ROOT_DIR, "data", "shogi_glossary.json")

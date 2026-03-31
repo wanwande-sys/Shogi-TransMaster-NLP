@@ -7,6 +7,8 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**[📖 完整使用说明书](docs/使用说明书.md)**
+
 ## 📸 系统交互界面 (HITL GUI)
 
 <img width="2467" height="1266" alt="Image" src="https://github.com/user-attachments/assets/de983344-ecdd-4cfd-ae13-9e234350c405" />

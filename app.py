@@ -9,9 +9,9 @@ import tkinter as tk
 from tkinter import filedialog
 
 # 导入拆分后的模块
-from config import DOMAIN_PROFILES, SUBTITLE_PRESETS, GLOSSARY_FILE
-from utils import extract_urls
-from core_engine import download_video, burn_subtitles_nvenc_with_progress, run_full_pipeline
+from core.config import DOMAIN_PROFILES, SUBTITLE_PRESETS, GLOSSARY_FILE
+from core.utils import extract_urls
+from core.core_engine import download_video, burn_subtitles_nvenc_with_progress, run_full_pipeline
 
 st.set_page_config(page_title="视听自动化工作台", page_icon="🎬", layout="wide")
 

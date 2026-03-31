@@ -65,3 +65,10 @@
 git clone [https://github.com/wanwande-sys/Shogi-TransMaster-NLP.git](https://github.com/wanwande-sys/Shogi-TransMaster-NLP.git)
 cd Shogi-TransMaster-NLP
 pip install -r requirements.txt
+
+
+# Windows 用户直接双击或运行：
+run.bat
+
+# Mac/Linux 用户请在终端运行：
+streamlit run app.py

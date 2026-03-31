@@ -9,7 +9,8 @@
 
 ## 📸 系统交互界面 (HITL GUI)
 
-*(这里填入你原来的那张 Streamlit 界面截图链接)*
+![Uploading image.png…]()
+
 
 > ▲ 基于 Streamlit 构建的 MTPE（机器翻译译后编辑）可视化控制台。采用 **HITL（Human-in-the-Loop，人机协同）** 设计理念，支持领域专家对大模型输出结果进行极低成本的最终校验与微调。
 

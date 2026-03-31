@@ -56,13 +56,12 @@
 
 ---
 
-## 🚀 快速运行 (Quick Start)
+## 🚀 快速启动 (Quick Start)
 
-请确保本地已安装 Python 环境及 FFmpeg 环境变量。
+⚠️ **前置要求**：请确保本地已安装 **Python 3.9+**，并已全局安装 **FFmpeg**（必须添加至系统环境变量，用于音视频处理）。
 
+**1. 克隆项目并安装依赖**
 ```bash
-# 1. 安装项目依赖
+git clone [https://github.com/wanwande-sys/Shogi-TransMaster-NLP.git](https://github.com/wanwande-sys/Shogi-TransMaster-NLP.git)
+cd Shogi-TransMaster-NLP
 pip install -r requirements.txt
-
-# 2. 一键启动人机协同控制台
-run.bat

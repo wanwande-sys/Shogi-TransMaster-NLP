@@ -1,3 +1,6 @@
+<div align="right">
+  <a href="README.md">🇨🇳 中文</a> | <a href="README_ja.md">🇯🇵 日本語</a>
+</div>
 <img width="2467" height="1266" alt="image" src="https://github.com/user-attachments/assets/493f8e31-54c2-45b2-b56c-4dc2e22cbf02" />
 
 ## 📸 デモ画面 (Demo)
